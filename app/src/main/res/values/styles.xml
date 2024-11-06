@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RoundedButton">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:backgroundTint">#2B2B2B</item>
+    </style>
+
+
+</resources>
