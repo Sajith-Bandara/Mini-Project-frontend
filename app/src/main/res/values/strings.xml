@@ -16,8 +16,10 @@
     <string name="button_login">Sign in</string>
     <string name="button_signup">Sign up</string>
     <string name="button_next">Next</string>
+    <string name="button_continue">Continue</string>
 
     <string name="signup_toast">Password does not match!</string>
+    <string name="empty_field_toast">Required field cannot be empty</string>
 
     <string name="titleFrom1">Add Recovery Details</string>
     <string name="full_name">Full Name</string>
@@ -27,7 +29,6 @@
     <string name="dob">Date of Birth</string>
     <string name="ownQuestion">My Own Question</string>
     <string name="ownAnswer">My Own Answer</string>
-
 
 
 </resources>

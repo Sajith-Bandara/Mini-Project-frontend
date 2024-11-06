@@ -1,5 +1,6 @@
 package com.example.assisment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,17 +34,22 @@ public class SignupActivity extends AppCompatActivity {
         confirmPassword=findViewById(R.id.confirmPasswod);
         button=findViewById(R.id.signupBtn);
 
+        Intent intent =new Intent(this,RecoverFormActivity.class);
+        intent.putExtra("email",email.getText().toString());
+        intent.putExtra("password",password.getText().toString());
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String passwordString = password.getText().toString();
-                String confirmPasswordString = confirmPassword.getText().toString();
 
-                if(passwordString.equals(confirmPasswordString)){
-                    Log.i(tag,email.getText().toString());
-                    Log.i(tag,passwordString);
-                }else{
+                if( password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty() || email.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),getString(R.string.empty_field_toast),Toast.LENGTH_LONG).show();
+                }else if(!password.getText().toString().equals(confirmPassword.getText().toString())){
                     Toast.makeText(getApplicationContext(),getString(R.string.signup_toast),Toast.LENGTH_LONG).show();
+                }else{
+                    Log.i(tag,email.getText().toString());
+                    Log.i(tag,password.getText().toString());
+                    startActivity(intent);
                 }
             }
         });
