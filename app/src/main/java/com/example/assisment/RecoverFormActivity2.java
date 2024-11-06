@@ -31,7 +31,7 @@ public class RecoverFormActivity2 extends AppCompatActivity {
         button = findViewById(R.id.continueBtn);
 
         Intent foreignIntent = getIntent();
-        Intent intent = new Intent(this,DataSourceEventActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
 
 
         button.setOnClickListener(new View.OnClickListener() {

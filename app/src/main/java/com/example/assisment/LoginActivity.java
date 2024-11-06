@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class LoginActivity extends AppCompatActivity {
 
     private TextView switchToSignup;
+    private TextView recoverAccount;
     private Button button;
     private EditText email;
     private EditText password;
@@ -44,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        switchToSignup = (findViewById(R.id.toSignup));
+        switchToSignup = findViewById(R.id.toSignup);
         Intent intent = new Intent(this, SignupActivity.class);
 
         switchToSignup.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +54,15 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        recoverAccount = findViewById(R.id.recoverAccount);
+        Intent intent1 = new Intent(this,RecoverAccountActivity.class);
+
+        recoverAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {startActivity(intent1);            }
+        });
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
