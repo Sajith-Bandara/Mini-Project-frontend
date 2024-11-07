@@ -9,25 +9,45 @@
     <string name="password_label">Password</string>
     <string name="confirm_password_label">Confirm Password</string>
 
-    <string name="forgot_password">Forgot Password</string>
+    <string name="forgot_password">Recover Account?</string>
     <string name="login_bottom_text">Don\'t have an account?</string>
     <string name="to_signup">Sign up here</string>
 
     <string name="button_login">Sign in</string>
     <string name="button_signup">Sign up</string>
     <string name="button_next">Next</string>
+    <string name="button_continue">Continue</string>
+    <string name="button_recover">Recover</string>
+    <string name="button_submit">Submit</string>
+    <string name="button_delete">Delete Subscription</string>
 
     <string name="signup_toast">Password does not match!</string>
+    <string name="empty_field_toast">Required field cannot be empty</string>
 
     <string name="titleFrom1">Add Recovery Details</string>
+    <string name="titleRecover">Recover Account</string>
+    <string name="homeTitle">Data Sourcing Events</string>
+    <string name="openTitle">Add Following Details</string>
+
     <string name="full_name">Full Name</string>
     <string name="pet_name">Childhood Pet Name</string>
     <string name="friend_name">Childhood Best Friend Name</string>
     <string name="mother_name">Mothers Maiden Name</string>
     <string name="dob">Date of Birth</string>
+    <string name="tob">Time of Birth</string>
     <string name="ownQuestion">My Own Question</string>
     <string name="ownAnswer">My Own Answer</string>
+    <string name="inputAnswer">Input Answer</string>
+    <string name="bloodGroup">Blood Group</string>
+    <string name="sex">Sex</string>
+    <string name="height">Height</string>
+    <string name="ethnicity">Ethnicity</string>
+    <string name="eyeColour">Eye Colour</string>
 
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign In</string>
 
 
 </resources>

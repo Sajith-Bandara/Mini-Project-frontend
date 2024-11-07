@@ -9,13 +9,10 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/ownQuestion"
-        android:layout_width="340dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        style="@style/InputField"
         android:layout_marginBottom="412dp"
         android:background="@drawable/rounded_input_background"
         android:hint="@string/ownQuestion"
-        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,20 +21,17 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/ownAnswer"
-        android:layout_width="340dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
+        style="@style/InputField"
         android:background="@drawable/rounded_input_background"
         android:hint="@string/ownAnswer"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ownQuestion" />
 
     <Button
-        android:id="@+id/nextBtn2"
+        android:id="@+id/continueBtn"
         style="@style/RoundedButton"
-        android:text="@string/button_next"
+        android:text="@string/button_continue"
         app:cornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,11 +41,8 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Titles"
         android:text="@string/titleFrom1"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
