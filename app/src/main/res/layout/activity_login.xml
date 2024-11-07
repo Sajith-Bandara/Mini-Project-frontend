@@ -26,6 +26,7 @@
         android:layout_marginBottom="340dp"
         android:background="@drawable/rounded_input_background"
         android:hint="@string/prompt_password"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,14 +71,15 @@
         android:id="@+id/signinBtn"
         style="@style/RoundedButton"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="150dp"
         android:text="@string/button_login"
-        app:cornerRadius="100dp"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView6"
@@ -120,11 +122,12 @@
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
+        android:layout_marginBottom="80dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.876" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
