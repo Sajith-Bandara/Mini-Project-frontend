@@ -5,12 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecoverFormActivity">
+    tools:context=".RecoverAccountActivity">
 
     <TextView
         android:id="@+id/textView5"
         style="@style/Titles"
-        android:text="@string/titleFrom1"
+        android:text="@string/titleRecover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +18,7 @@
         app:layout_constraintVertical_bias="0.120000005" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/fname"
+        android:id="@+id/fnameRecover"
         style="@style/InputField"
         android:layout_marginBottom="412dp"
         android:background="@drawable/rounded_input_background"
@@ -30,55 +30,60 @@
         app:layout_constraintVertical_bias="0.342" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/dob"
+        android:id="@+id/dobRecover"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
         android:hint="@string/dob"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fname" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/mothersName"
-        style="@style/InputField"
-        android:background="@drawable/rounded_input_background"
-        android:hint="@string/mother_name"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dob" />
+        app:layout_constraintTop_toBottomOf="@+id/fnameRecover" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/friendName"
+        android:id="@+id/answer1"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/friend_name"
+        android:hint="@string/inputAnswer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mothersName" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/petName"
+        android:id="@+id/answer2"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/pet_name"
+        android:hint="@string/inputAnswer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/friendName" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        style="@style/Spinner"
+        android:background="@drawable/rounded_spinner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dobRecover" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        style="@style/Spinner"
+        android:background="@drawable/rounded_spinner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer1" />
 
     <Button
-        android:id="@+id/nextBtn1"
+        android:id="@+id/recoverBtn"
         style="@style/RoundedButton"
-        android:text="@string/button_next"
-        android:textSize="20dp"
-        app:cornerRadius="5dp"
+        android:text="@string/button_recover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

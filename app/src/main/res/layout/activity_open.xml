@@ -5,12 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecoverFormActivity">
+    tools:context=".OpenActivity">
 
     <TextView
         android:id="@+id/textView5"
         style="@style/Titles"
-        android:text="@string/titleFrom1"
+        android:text="@string/openTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,11 +18,11 @@
         app:layout_constraintVertical_bias="0.120000005" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/fname"
+        android:id="@+id/dobOpen"
         style="@style/InputField"
         android:layout_marginBottom="412dp"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/full_name"
+        android:hint="@string/dob"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,55 +30,72 @@
         app:layout_constraintVertical_bias="0.342" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/dob"
+        android:id="@+id/tobOpen"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/dob"
+        android:hint="@string/tob"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fname" />
+        app:layout_constraintTop_toBottomOf="@+id/dobOpen" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/mothersName"
+        android:id="@+id/bloodGroupOpen"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/mother_name"
+        android:hint="@string/bloodGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dob" />
+        app:layout_constraintTop_toBottomOf="@+id/tobOpen" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/friendName"
+        android:id="@+id/sexOpen"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/friend_name"
+        android:hint="@string/sex"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mothersName" />
+        app:layout_constraintTop_toBottomOf="@+id/bloodGroupOpen" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/petName"
+        android:id="@+id/heightOpen"
         style="@style/InputField"
         android:background="@drawable/rounded_input_background"
-        android:hint="@string/pet_name"
+        android:hint="@string/height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/friendName" />
+        app:layout_constraintTop_toBottomOf="@+id/sexOpen" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/ethnicityOpen"
+        style="@style/InputField"
+        android:background="@drawable/rounded_input_background"
+        android:hint="@string/ethnicity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightOpen" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/eyeColorOpen"
+        style="@style/InputField"
+        android:background="@drawable/rounded_input_background"
+        android:hint="@string/eyeColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ethnicityOpen" />
 
     <Button
-        android:id="@+id/nextBtn1"
+        android:id="@+id/submitOpen"
         style="@style/RoundedButton"
-        android:text="@string/button_next"
-        android:textSize="20dp"
+        android:text="@string/button_submit"
         app:cornerRadius="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
-
+        app:layout_constraintVertical_bias="0.949" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
