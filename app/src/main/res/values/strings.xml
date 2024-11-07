@@ -28,6 +28,7 @@
     <string name="titleRecover">Recover Account</string>
     <string name="homeTitle">Data Sourcing Events</string>
     <string name="openTitle">Add Following Details</string>
+    <string name="subTitle">Subscriptions</string>
 
     <string name="full_name">Full Name</string>
     <string name="pet_name">Childhood Pet Name</string>
