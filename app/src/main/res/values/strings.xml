@@ -11,9 +11,12 @@
 
     <string name="forgot_password">Recover Account?</string>
     <string name="login_bottom_text">Don\'t have an account?</string>
-    <string name="to_signup">Sign up here</string>
+    <string name="signup_bottom_text">Already a Member?</string>
+    <string name="to_signup">Sign up </string>
+    <string name="to_login">Login</string>
+    <string name="check_box">Remember me</string>
 
-    <string name="button_login">Sign in</string>
+    <string name="button_login">Login</string>
     <string name="button_signup">Sign up</string>
     <string name="button_next">Next</string>
     <string name="button_continue">Continue</string>
@@ -28,6 +31,7 @@
     <string name="titleRecover">Recover Account</string>
     <string name="homeTitle">Data Sourcing Events</string>
     <string name="openTitle">Add Following Details</string>
+    <string name="subTitle">Subscriptions</string>
 
     <string name="full_name">Full Name</string>
     <string name="pet_name">Childhood Pet Name</string>
