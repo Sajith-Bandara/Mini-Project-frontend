@@ -12,6 +12,7 @@
     <string name="forgot_password">Recover Account?</string>
     <string name="login_bottom_text">Don\'t have an account?</string>
     <string name="to_signup">Sign up here</string>
+    <string name="check_box">Remember me</string>
 
     <string name="button_login">Sign in</string>
     <string name="button_signup">Sign up</string>
