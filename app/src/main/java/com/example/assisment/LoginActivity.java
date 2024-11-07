@@ -37,11 +37,14 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.emailLogin);
         password = findViewById(R.id.passwordLogin);
 
+        Intent logIntent = new Intent(this,HomeActivity.class);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.i(tag,email.getText().toString());
                 Log.i(tag,password.getText().toString());
+                startActivity(logIntent);
             }
         });
 
