@@ -18,32 +18,41 @@
             android:id="@+id/cardTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="Card Title"
+            android:textColor="#000"
             android:textSize="18sp"
-            android:textColor="#000"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/cardDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Card Description"
-            android:textSize="14sp"
-            android:textColor="#666"/>
+            android:textColor="#666"
+            android:textSize="14sp" />
 
-        <TextView
+        <androidx.cardview.widget.CardView
             android:id="@+id/cardStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Card Status"
-            android:textSize="14sp"
-            android:padding="4dp"
-            android:textColor="#FFF"
-            android:background="#3F51B5"
-            android:layout_gravity="end"
-            android:layout_marginTop="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"/>
+            android:layout_gravity="right"
+            app:cardBackgroundColor="#3F51B5"
+            app:cardCornerRadius="8dp">
+
+            <TextView
+                android:id="@+id/card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="4dp"
+                android:text="Card Status"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp" />
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
