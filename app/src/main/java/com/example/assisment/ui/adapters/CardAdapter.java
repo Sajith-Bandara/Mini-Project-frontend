@@ -1,4 +1,4 @@
-package com.example.assisment;
+package com.example.assisment.ui.adapters;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.assisment.ui.activities.OpenActivity;
+import com.example.assisment.R;
+import com.example.assisment.ui.activities.SubscribedActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
