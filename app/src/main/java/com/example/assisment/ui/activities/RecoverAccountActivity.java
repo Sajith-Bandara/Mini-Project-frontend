@@ -1,4 +1,4 @@
-package com.example.assisment;
+package com.example.assisment.ui.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import com.example.assisment.R;
 
 import java.util.ArrayList;
 import java.util.List;
