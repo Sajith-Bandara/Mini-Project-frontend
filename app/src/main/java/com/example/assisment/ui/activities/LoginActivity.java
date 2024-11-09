@@ -19,19 +19,11 @@ import com.example.assisment.R;
 import com.example.assisment.data.api.ApiService;
 import com.example.assisment.data.models.LoginRequest;
 import com.example.assisment.data.models.LoginResponse;
+import com.example.assisment.ui.adapters.Config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Toast;
-
-import org.json.JSONObject;
-
-import java.io.IOException;
-
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,7 +33,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final String BASE_URL = "http://192.168.8.132:8085/auth/";
     private static final String SHARED_PREFS = "app_prefs";
     private static final String TOKEN_KEY = "token";
     private static final String PRIVATE_KEY = "private_key";
@@ -104,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser(String email, String password) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(Config.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
