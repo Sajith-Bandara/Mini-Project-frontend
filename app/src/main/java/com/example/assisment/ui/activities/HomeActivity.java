@@ -1,4 +1,4 @@
-package com.example.assisment;
+package com.example.assisment.ui.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,11 +12,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.assisment.R;
+import com.example.assisment.ui.adapters.CardAdapter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.assisment;
+package com.example.assisment.ui.adapters;
 
 public class CardItem {
     private String title;
