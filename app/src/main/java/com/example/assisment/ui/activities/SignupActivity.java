@@ -109,6 +109,7 @@ public class SignupActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     saveLoginData(response.body());
                     startActivity(signupIntent);
+                    finish();
 
                 } else {
                     Toast.makeText(SignupActivity.this, "Signup failed", Toast.LENGTH_SHORT).show();

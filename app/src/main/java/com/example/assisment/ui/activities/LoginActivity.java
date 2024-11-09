@@ -120,8 +120,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     if(sharedPreferences.getString(ROLE_KEY,"").equals("USER")){
                         startActivity(logIntent);
+                        finish();
                     }else if (sharedPreferences.getString(ROLE_KEY,"").equals("ADMIN")){
                         startActivity(logIntentAdmin);
+                        finish();
                     }
 
                 } else {
