@@ -1,7 +1,9 @@
 package com.example.assisment.ui.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,9 +19,25 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.assisment.R;
+import com.example.assisment.data.api.ApiService;
+import com.example.assisment.data.models.LoginRequest;
+import com.example.assisment.data.models.LoginResponse;
+import com.example.assisment.data.models.SignupRequest;
+import com.example.assisment.ui.adapters.Config;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class SignupActivity extends AppCompatActivity {
+
+    private static final String SHARED_PREFS = "app_prefs";
+    private static final String TOKEN_KEY = "token";
+    private static final String PRIVATE_KEY = "private_key";
+    private static final String ROLE_KEY = "role";
 
     private TextView switchToLogin;
     private EditText email;
@@ -40,10 +58,6 @@ public class SignupActivity extends AppCompatActivity {
         confirmPassword=findViewById(R.id.confirmPasswod);
         button=findViewById(R.id.signupBtn);
 
-        Intent intent =new Intent(this,RecoverFormActivity.class);
-        intent.putExtra("email",email.getText().toString());
-        intent.putExtra("password",password.getText().toString());
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,9 +67,7 @@ public class SignupActivity extends AppCompatActivity {
                 }else if(!password.getText().toString().equals(confirmPassword.getText().toString())){
                     Toast.makeText(getApplicationContext(),getString(R.string.signup_toast),Toast.LENGTH_LONG).show();
                 }else{
-                    Log.i(tag,email.getText().toString());
-                    Log.i(tag,password.getText().toString());
-                    startActivity(intent);
+                    signupUser(email.getText().toString(),password.getText().toString());
                 }
             }
         });
@@ -76,5 +88,47 @@ public class SignupActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    private void signupUser(String email, String password) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Config.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiService apiService = retrofit.create(ApiService.class);
+        SignupRequest signupRequest = new SignupRequest(email, password);
+
+        Intent signupIntent = new Intent(this,RecoverFormActivity.class);
+
+        apiService.signup(signupRequest).enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+                if (response.isSuccessful() && response.body() != null) {
+                    saveLoginData(response.body());
+                    startActivity(signupIntent);
+
+                } else {
+                    Toast.makeText(SignupActivity.this, "Signup failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Log.e(tag,t.toString());
+                Toast.makeText(SignupActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void saveLoginData(LoginResponse loginResponse) {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TOKEN_KEY, loginResponse.getToken());
+        editor.putString(PRIVATE_KEY, loginResponse.getPrivateKey());
+        editor.putString(ROLE_KEY, loginResponse.getRole());
+        editor.apply();
     }
 }
