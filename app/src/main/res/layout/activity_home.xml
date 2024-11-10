@@ -26,11 +26,6 @@
             android:layout_height="499dp"
             android:padding="16dp" />
 
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

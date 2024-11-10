@@ -3,7 +3,6 @@ package com.example.assisment.ui.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,8 +42,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button button;
     private EditText email;
     private EditText password;
-
-    private final String tag="filter";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -102,17 +99,12 @@ public class LoginActivity extends AppCompatActivity {
         ApiService apiService = retrofit.create(ApiService.class);
         LoginRequest loginRequest = new LoginRequest(email, password);
 
-
-        Log.i(tag,loginRequest.toString());
         Intent logIntent = new Intent(this,HomeActivity.class);
         Intent logIntentAdmin = new Intent(this,AdminHome.class);
 
         apiService.login(loginRequest).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-
-                Log.i(tag,response.body().getRole().toString());
-
                 if (response.isSuccessful() && response.body() != null) {
                     saveLoginData(response.body());
 
@@ -127,14 +119,13 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.login_failed_toast), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Log.e(tag,t.toString());
-                Toast.makeText(LoginActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, getString(R.string.network_error_toast), Toast.LENGTH_SHORT).show();
             }
         });
     }
