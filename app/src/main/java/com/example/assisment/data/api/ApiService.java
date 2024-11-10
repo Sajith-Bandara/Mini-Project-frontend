@@ -2,6 +2,7 @@ package com.example.assisment.data.api;
 
 
 import com.example.assisment.data.models.Event;
+import com.example.assisment.data.models.EventAdd;
 import com.example.assisment.data.models.EventRequest;
 import com.example.assisment.data.models.LoginRequest;
 import com.example.assisment.data.models.LoginResponse;
@@ -65,6 +66,15 @@ public interface ApiService {
             @Body EventRequest event,
             @Header("Authorization") String token
     );
+    @GET("sourcingEvent/get")
+    Call<List<Event>>  getSubEventAdmin(
+            @Header("Authorization") String token
+    );
 
+    @POST("sourcingEvent/save")
+    Call<NormalResponse> saveEvent(
+            @Body EventAdd eventAdd,
+            @Header("Authorization") String token
+    );
 }
 
