@@ -1,5 +1,6 @@
 package com.example.assisment.ui.adapters;
 
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -66,6 +67,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                     intent.putExtra("event_id",eventId);
                 } else if ("Subscribed".equalsIgnoreCase(status)) {
                     intent = new Intent(v.getContext(), SubscribedActivity.class);
+                    intent.putExtra("eventId",eventId);
                 } else {
                     return;
                 }

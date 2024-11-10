@@ -112,14 +112,14 @@ public class SignupActivity extends AppCompatActivity {
                     finish();
 
                 } else {
-                    Toast.makeText(SignupActivity.this, "Signup failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, getString(R.string.signup_failed_toast), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Log.e(tag,t.toString());
-                Toast.makeText(SignupActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignupActivity.this, getString(R.string.network_error_toast), Toast.LENGTH_SHORT).show();
             }
         });
     }
