@@ -8,12 +8,72 @@
     tools:context=".ui.activities.SubscribedActivity">
 
     <TextView
+        android:id="@+id/eyeColorText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/eyeColorSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/heightText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/heightSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/ethnicityText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ethnicitySub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/sexText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sexSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bloodText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bloodGroupSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/textView5"
         style="@style/Titles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="@string/openTitle"
+        android:text="@string/submittedTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,70 +94,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/dobSub"
-        style="@style/textEdit"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="412dp"
-        android:text="@string/dob"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tobSub"
-        style="@style/textEdit"
-        android:text="@string/tob"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dobSub" />
-
-    <TextView
-        android:id="@+id/bloodGroupSub"
-        style="@style/textEdit"
-        android:text="@string/bloodGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tobSub" />
-
-    <TextView
-        android:id="@+id/sexSub"
-        style="@style/textEdit"
-        android:text="@string/sex"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bloodGroupSub" />
-
-    <TextView
-        android:id="@+id/heightSub"
-        style="@style/textEdit"
-        android:text="@string/height"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sexSub" />
-
-    <TextView
-        android:id="@+id/ethnicitySub"
-        style="@style/textEdit"
-        android:text="@string/ethnicity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heightSub" />
-
-    <TextView
-        android:id="@+id/eyeColorSub"
-        style="@style/textEdit"
-        android:text="@string/eyeColour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ethnicitySub" />
-
     <View
         android:id="@+id/divider7"
         android:layout_width="409dp"
@@ -109,4 +105,115 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="main,dobSub,tobSub,bloodGroupSub,sexSub,heightSub,ethnicitySub,eyeColorSub" />
+
+    <TextView
+        android:id="@+id/dobSub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="412dp"
+        android:text="@string/dob"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tobSub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/tob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dobSub" />
+
+    <TextView
+        android:id="@+id/bloodGroupSub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/bloodGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tobSub" />
+
+    <TextView
+        android:id="@+id/sexSub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/sex"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bloodGroupSub" />
+
+    <TextView
+        android:id="@+id/heightSub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexSub" />
+
+    <TextView
+        android:id="@+id/ethnicitySub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/ethnicity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightSub" />
+
+    <TextView
+        android:id="@+id/eyeColorSub"
+        style="@style/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/eyeColour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ethnicitySub" />
+
+    <TextView
+        android:id="@+id/dobText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dobSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tobText"
+        style="@style/InputFieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tobSub"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

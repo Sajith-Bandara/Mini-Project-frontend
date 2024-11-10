@@ -8,6 +8,7 @@ import com.example.assisment.data.models.LoginResponse;
 import com.example.assisment.data.models.NormalResponse;
 import com.example.assisment.data.models.RecoverDetais;
 import com.example.assisment.data.models.SignupRequest;
+import com.example.assisment.data.models.SubEvents;
 import com.example.assisment.data.models.SubscribeEvent;
 
 import org.json.JSONObject;
@@ -16,8 +17,10 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiService {
     @POST("auth/login")
@@ -41,6 +44,17 @@ public interface ApiService {
     @POST("userdetails/save")
     Call<NormalResponse>  subscribeEvent(
             @Body SubscribeEvent event,
+            @Header("Authorization") String token
+    );
+
+    @POST("userdetails/getMySubscribedData")
+    Call<List<SubEvents>>  getSubscribeEvent(
+            @Body EventRequest event,
+            @Header("Authorization") String token
+    );
+    @GET("userdetails/get_using_id")
+    Call<SubEvents>  getSubEvent(
+            @Query("id") String eventId,
             @Header("Authorization") String token
     );
 
