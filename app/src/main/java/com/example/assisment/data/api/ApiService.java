@@ -4,12 +4,19 @@ package com.example.assisment.data.api;
 import androidx.media3.common.C;
 
 import com.example.assisment.data.models.ChangePassword;
+import com.example.assisment.data.models.Event;
+import com.example.assisment.data.models.EventRequest;
 import com.example.assisment.data.models.LoginRequest;
 import com.example.assisment.data.models.LoginResponse;
 import com.example.assisment.data.models.NormalResponse;
 import com.example.assisment.data.models.RecoverDetais;
 import com.example.assisment.data.models.RecoveryData;
 import com.example.assisment.data.models.SignupRequest;
+import com.example.assisment.data.models.SubscribeEvent;
+
+import org.json.JSONObject;
+
+import java.util.List;
 
 import java.util.Map;
 
@@ -33,6 +40,18 @@ public interface ApiService {
     );
     @GET("recovery/get")
     Call<RecoveryData> getRecoveryData(@Header("Authorization") String token);
+
+    @POST("sourcingEvent/getEvents")
+    Call<List<Event>>  getEvents(
+            @Body EventRequest event,
+            @Header("Authorization") String token
+    );
+
+    @POST("userdetails/save")
+    Call<NormalResponse>  subscribeEvent(
+            @Body SubscribeEvent event,
+            @Header("Authorization") String token
+    );
 
     @GET("auth/mydetails")
     Call<Map<String,String>> getEmail(@Header("Authorization") String token);
