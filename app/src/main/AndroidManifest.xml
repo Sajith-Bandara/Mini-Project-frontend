@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
 
     <application
         android:allowBackup="true"
@@ -15,6 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniProject"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.activities.ProfileActivity"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".ui.activities.EventAddActivity"
             android:exported="false" />
@@ -32,7 +39,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.activities.RecoverAccountActivity"
-            android:exported="false" />
+            android:exported="true" >
+        </activity>
         <activity
             android:name=".ui.activities.HomeActivity"
             android:exported="false" />

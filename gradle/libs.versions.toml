@@ -1,6 +1,8 @@
 [versions]
-agp = "8.5.0"
+agp = "8.7.2"
 appcompatVersion = "1.4.1"
+biometric = "1.2.0"
+biometricVersion = "1.0.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
@@ -17,6 +19,8 @@ retrofit = "2.9.0"
 
 [libraries]
 appcompat-v141 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
+biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
+biometric-v101 = { module = "androidx.biometric:biometric", version.ref = "biometricVersion" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
