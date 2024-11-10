@@ -1,11 +1,14 @@
 package com.example.assisment.ui.activities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -131,6 +134,20 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "Network error", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.exit_title))
+                .setMessage(getString(R.string.conform_massage_exit))
+                .setPositiveButton(getString(R.string.button_Yes), (dialog, which) -> {
+                    super.onBackPressed();
+                    finishAffinity();
+                    System.exit(0);
+                })
+                .setNegativeButton(getString(R.string.button_No), null)
+                .show();
     }
 
 }

@@ -91,15 +91,15 @@ public class OpenActivity extends AppCompatActivity {
 
     private void showConfirmationDialog(SubscribeEvent subscribeEvent) {
         new AlertDialog.Builder(this)
-                .setTitle("Save Data")
-                .setMessage("Do you want to save this information before proceeding?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setTitle(getString(R.string.save_data_title))
+                .setMessage(getString(R.string.conform_massage_save))
+                .setPositiveButton(getString(R.string.button_Yes), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         sendSubscribeData(subscribeEvent);
                     }
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.button_No, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {}
                 })
@@ -117,22 +117,22 @@ public class OpenActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         String token = sharedPreferences.getString(TOKEN_KEY, "");
 
-        Intent homeIntent = new Intent(this,HomeActivity.class);
+        Intent subActivity = new Intent(this,SubActivity.class);
 
         apiService.subscribeEvent(subscribeEvent,  token).enqueue(new Callback<NormalResponse>() {
             @Override
             public void onResponse(Call<NormalResponse> call, Response<NormalResponse> response) {
-                Log.i("filter", String.valueOf(response.code()));
                 if (response.isSuccessful()) {
-                    startActivity(homeIntent);
+                    startActivity(subActivity);
+                    finish();
                 } else {
-                    Toast.makeText(OpenActivity.this, "Data saving Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OpenActivity.this, getString(R.string.data_save_failed_toast), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<NormalResponse> call, Throwable t) {
-                Toast.makeText(OpenActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(OpenActivity.this, getString(R.string.network_error_toast), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -141,13 +141,13 @@ public class OpenActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setTitle("Unsaved Data")
-                .setMessage("You have unsaved data. Are you sure you want to go back?")
-                .setPositiveButton("Yes", (dialog, which) -> {
+                .setTitle(getString(R.string.unsave_title))
+                .setMessage(getString(R.string.conform_massage_back))
+                .setPositiveButton(getString(R.string.button_Yes), (dialog, which) -> {
                     // Call super.onBackPressed only if the user confirms
                     OpenActivity.super.onBackPressed();
                 })
-                .setNegativeButton("No", null)
+                .setNegativeButton(getString(R.string.button_No), null)
                 .show();
     }
 
