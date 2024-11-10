@@ -11,6 +11,7 @@ import com.example.assisment.data.models.LoginResponse;
 import com.example.assisment.data.models.NormalResponse;
 import com.example.assisment.data.models.RecoverDetais;
 import com.example.assisment.data.models.RecoveryData;
+import com.example.assisment.data.models.ResetPW;
 import com.example.assisment.data.models.SignupRequest;
 import com.example.assisment.data.models.SubscribeEvent;
 
@@ -58,5 +59,12 @@ public interface ApiService {
 
     @POST("auth/changePassword")
     Call <Map<String,String>> changePassword(@Body ChangePassword req, @Header("Authorization") String token);
+
+    @POST("auth/recover_account")
+    Call<Map<String,String>> recoverAccount(@Body RecoveryData recoverAccount);
+
+    @POST("auth/resetPassword")
+    Call<Map<String,String>> resetPassword(@Body ResetPW resetPassword);
+
 }
 
