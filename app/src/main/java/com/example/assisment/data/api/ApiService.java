@@ -17,7 +17,9 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -55,6 +57,12 @@ public interface ApiService {
     @GET("userdetails/get_using_id")
     Call<SubEvents>  getSubEvent(
             @Query("id") String eventId,
+            @Header("Authorization") String token
+    );
+    @HTTP(method = "DELETE", path = "userdetails/delete", hasBody = true)
+    Call<NormalResponse>  deleteSubEvent(
+            @Query("id") String eventId,
+            @Body EventRequest event,
             @Header("Authorization") String token
     );
 

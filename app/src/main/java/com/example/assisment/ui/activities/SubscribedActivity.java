@@ -1,7 +1,9 @@
 package com.example.assisment.ui.activities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -21,8 +23,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.assisment.R;
 import com.example.assisment.data.api.ApiService;
 import com.example.assisment.data.models.EventRequest;
+import com.example.assisment.data.models.NormalResponse;
 import com.example.assisment.data.models.OnEventsReceived;
 import com.example.assisment.data.models.SubEvents;
+import com.example.assisment.data.models.SubscribeEvent;
 import com.example.assisment.ui.adapters.Config;
 import com.google.gson.Gson;
 
@@ -62,16 +66,14 @@ public class SubscribedActivity extends AppCompatActivity {
 
         Intent Eventintent = getIntent();
         String eventId = Eventintent.getStringExtra("eventId");
-        Log.i("filter","event "+eventId);
         getSubEventDetails(eventId);
 
         button = findViewById(R.id.deleteSub);
-        Intent intent = new Intent(this,HomeActivity.class);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent);
+                showConfirmationDialog(eventId);
             }
         });
 
@@ -116,5 +118,53 @@ public class SubscribedActivity extends AppCompatActivity {
                 Toast.makeText(SubscribedActivity.this, getString(R.string.network_error_toast), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void  deleteSubEventDetails(String eventId) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Config.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiService apiService = retrofit.create(ApiService.class);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString(TOKEN_KEY, "");
+        EventRequest event = new EventRequest(sharedPreferences.getString(PRIVATE_KEY,""));
+
+        Intent intent = new Intent(this,HomeActivity.class);
+        apiService.deleteSubEvent(eventId,event,token).enqueue(new Callback<NormalResponse>() {
+            @Override
+            public void onResponse(Call<NormalResponse> call, Response<NormalResponse> response) {
+                Log.i("filter","code"+ response.code());
+                if(response.isSuccessful() && response.body() != null){
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(SubscribedActivity.this, getString(R.string.sub_delete_failed_toast), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<NormalResponse> call, Throwable t) {
+                Toast.makeText(SubscribedActivity.this, getString(R.string.network_error_toast), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showConfirmationDialog(String eventId) {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.delete_title))
+                .setMessage(getString(R.string.conform_massage_delete))
+                .setPositiveButton(getString(R.string.button_Yes), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        deleteSubEventDetails(eventId);
+                    }
+                })
+                .setNegativeButton(R.string.button_No, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {}
+                })
+                .show();
     }
 }
