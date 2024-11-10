@@ -35,6 +35,7 @@
     <string name="signup_failed_toast">Signup Failed!</string>
     <string name="event_retrieve_failed_toast">Failed to retrieve events</string>
     <string name="login_failed_toast">Login Failed!</string>
+    <string name="sub_delete_failed_toast">Subscription deletion failed</string>
 
     <string name="titleFrom1">Add Recovery Details</string>
     <string name="titleRecover">Recover Account</string>
@@ -67,10 +68,12 @@
     <string name="unsave_title">Unsaved Data</string>
     <string name="save_data_title">Save Data</string>
     <string name="exit_title">Save Data</string>
+    <string name="delete_title">Delete Subscription</string>
 
     <string name="conform_massage_back">Are you sure you want to go back?</string>
     <string name="conform_massage_save">Are the information correct?</string>
     <string name="conform_massage_exit">Are you sure you want exit?</string>
+    <string name="conform_massage_delete">Are you sure you want delete subscription?</string>
 
 
 </resources>
