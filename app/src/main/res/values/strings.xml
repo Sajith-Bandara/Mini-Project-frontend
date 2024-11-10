@@ -49,6 +49,7 @@
     <string name="height">Height</string>
     <string name="ethnicity">Ethnicity</string>
     <string name="eyeColour">Eye Colour</string>
+    <string name="location">Location of Birth</string>
 
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

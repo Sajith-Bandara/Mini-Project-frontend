@@ -40,9 +40,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             JSONObject jsonObject = cardItemList.getJSONObject(position);
 
             // Extract values from JSON object
-            String title = jsonObject.optString("cardTitle");
-            String description = jsonObject.optString("cardDescription");
-            String status = jsonObject.optString("cardStatus");
+            String title = jsonObject.optString("event_name");
+            String description = jsonObject.optString("event_description");
+            String status = jsonObject.optString("tag");
+            String count = jsonObject.optString("count");
+            String eventId = jsonObject.optString("event_id");
 
             // Set values to TextViews
             holder.cardTitle.setText(title);
@@ -61,6 +63,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
                 Intent intent;
                 if ("Open".equalsIgnoreCase(status)) {
                     intent = new Intent(v.getContext(), OpenActivity.class);
+                    intent.putExtra("event_id",eventId);
                 } else if ("Subscribed".equalsIgnoreCase(status)) {
                     intent = new Intent(v.getContext(), SubscribedActivity.class);
                 } else {
