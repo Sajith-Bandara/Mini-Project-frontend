@@ -98,14 +98,14 @@ public class RecoverFormActivity2 extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     startActivity(homeIntent);
                 } else {
-                    Toast.makeText(RecoverFormActivity2.this, "Data saving Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RecoverFormActivity2.this, getString(R.string.data_save_failed_toast), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<NormalResponse> call, Throwable t) {
                 Log.e(tag,t.toString());
-                Toast.makeText(RecoverFormActivity2.this, "Network error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecoverFormActivity2.this, getString(R.string.network_error_toast), Toast.LENGTH_SHORT).show();
             }
         });
     }
