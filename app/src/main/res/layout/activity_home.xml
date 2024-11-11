@@ -42,7 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/baseline_account_circle_24"
-        app:stateListAnimator="@animator/scale_on"/>
+        app:srcCompat="@drawable/baseline_account_circle_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
