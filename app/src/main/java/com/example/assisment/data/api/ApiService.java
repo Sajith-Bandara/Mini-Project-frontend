@@ -5,6 +5,7 @@ import androidx.media3.common.C;
 
 import com.example.assisment.data.models.ChangePassword;
 import com.example.assisment.data.models.Event;
+import com.example.assisment.data.models.EventAdd;
 import com.example.assisment.data.models.EventRequest;
 import com.example.assisment.data.models.LoginRequest;
 import com.example.assisment.data.models.LoginResponse;
@@ -25,7 +26,6 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.DELETE;
 import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
@@ -87,5 +87,15 @@ public interface ApiService {
     @POST("auth/resetPassword")
     Call<Map<String,String>> resetPassword(@Body ResetPW resetPassword);
 
+    @GET("sourcingEvent/get")
+    Call<List<Event>>  getSubEventAdmin(
+            @Header("Authorization") String token
+    );
+
+    @POST("sourcingEvent/save")
+    Call<NormalResponse> saveEvent(
+            @Body EventAdd eventAdd,
+            @Header("Authorization") String token
+    );
 }
 

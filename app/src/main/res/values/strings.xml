@@ -27,6 +27,7 @@
     <string name="button_delete">Delete Subscription</string>
     <string name="button_Yes">Yes</string>
     <string name="button_No">No</string>
+    <string name="button_add_new">Add New</string>
 
     <string name="signup_toast">Password does not match!</string>
     <string name="empty_field_toast">Required field cannot be empty</string>
@@ -59,6 +60,8 @@
     <string name="ethnicity">Ethnicity</string>
     <string name="eyeColour">Eye Colour</string>
     <string name="location">Location of Birth</string>
+    <string name="eventName">Event Name</string>
+    <string name="eventDescription">Event Description</string>
 
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -67,7 +70,7 @@
 
     <string name="unsave_title">Unsaved Data</string>
     <string name="save_data_title">Save Data</string>
-    <string name="exit_title">Save Data</string>
+    <string name="exit_title">Exit</string>
     <string name="delete_title">Delete Subscription</string>
 
     <string name="conform_massage_back">Are you sure you want to go back?</string>
