@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +21,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.assisment.R;
 import com.example.assisment.data.api.ApiService;
 import com.example.assisment.data.models.NormalResponse;
-import com.example.assisment.data.models.RecoverDetais;
 import com.example.assisment.data.models.SubscribeEvent;
 import com.example.assisment.ui.adapters.Config;
 
@@ -47,7 +45,7 @@ public class OpenActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_open);
 
-        dob = findViewById(R.id.dobOpen);
+        dob = findViewById(R.id.eventName);
         tob = findViewById(R.id.tobOpen);
         bloodGroup = findViewById(R.id.bloodGroupOpen);
         sex = findViewById(R.id.sexOpen);
